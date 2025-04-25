@@ -86,6 +86,18 @@
       margin-top: 1rem;
       font-weight: bold;
     }
+
+    .next-page-btn {
+      display: none;
+      background-color: #006400;
+      color: white;
+      font-size: 1rem;
+      padding: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -95,33 +107,34 @@
   <div class="container">
     <h2 class="section-title">Enigma del Libro de Mazarbul</h2>
     <div class="narracion">
-      <!-- Aquí va la historia fantástica del problema -->
-      <p>En las profundidades de Moria, Gandalf ha encontrado un enigma ancestral que solo puede resolverse si se descifra la clave oculta en las letras mágicas. Para avanzar, debes calcular el valor total de una palabra secreta escrita en caracteres antiguos. Si lo haces correctamente, el libro se abrirá y podrás continuar con tu misión.</p>
+      <p>En las profundidades de Moria, Gandalf ha encontrado un enigma ancestral que solo puede resolverse si se descifra la clave oculta en las letras mágicas. Para avanzar, debes calcular el valor total magico de la palabra "Anillo" en caracteres antiguos. Si lo haces correctamente, el libro se abrirá y podrás continuar con tu misión.</p>
     </div>
 
     <h2 class="section-title">Enunciado del problema</h2>
     <div class="problema">
-      <!-- Aquí va el problema en forma más clara y directa -->
-      <p>Escribe un programa en C que calcule la suma de los valores ASCII de las letras de una palabra secreta. La suma resultante será la contraseña para avanzar. Usa el valor correcto y el portal se abrirá.</p>
+      <p>Escribe un programa en C que calcule la suma de los valores ASCII de las letras de la palabra "Anillo". La suma resultante será la contraseña para avanzar. Usa el valor correcto y el portal se abrirá.</p>
     </div>
 
     <div class="password-section">
       <label for="password">Ingresa la contraseña secreta (Suma de las letras):</label><br>
-      <input type="password" id="password">
+      <input type="password" id="password" placeholder="Introduce la suma de los valores ASCII de las letras">
       <button onclick="verificarContrasena()">Verificar</button>
       <div class="result" id="resultado"></div>
+      <button class="next-page-btn" onclick="location.href='siguiente-pagina.html'">Avanzar al siguiente nivel</button>
     </div>
   </div>
 
   <script>
     function verificarContrasena() {
-      const correcta = "529";  // La suma de los valores ASCII de "Anillo"
+      const correcta = "607";  // La suma de los valores ASCII de "Anillo"
       const entrada = document.getElementById("password").value;
       const resultado = document.getElementById("resultado");
+      const nextPageButton = document.querySelector(".next-page-btn");
 
       if (entrada === correcta) {
         resultado.textContent = "¡La puerta se abre ante tu sabiduría! La contraseña es correcta, avanza al siguiente nivel.";
         resultado.style.color = "#3b7a57";
+        nextPageButton.style.display = "inline-block";  // Mostrar el botón para avanzar
       } else {
         resultado.textContent = "¡La clave es errónea! La puerta sigue cerrada, debes comprender el enigma de las letras.";
         resultado.style.color = "#b22222";
