@@ -128,21 +128,19 @@
 
   <script>
     function verificarLinea() {
-      const respuestaCorrecta = "8"; // Contraseña: línea 8
+      const respuestaCorrecta = "8";
       const entradaUsuario = document.getElementById("message").value.trim();
       const resultadoElement = document.getElementById("resultado");
-
+  
       if (entradaUsuario === respuestaCorrecta) {
-        resultadoElement.textContent = "¡Correcto! Redirigiendo al siguiente nivel...";
-        resultadoElement.className = "result correct";
-        setTimeout(() => {
-          window.location.href = "Final.html"; // Cambiar por la página de destino real
-        }, 2000);
+        resultadoElement.textContent = "¡Correcto! Has descubierto la línea correcta.";
+        resultadoElement.style.color = "green";
       } else {
         resultadoElement.textContent = "¡Número incorrecto! Intenta de nuevo.";
-        resultadoElement.className = "result incorrect";
+        resultadoElement.style.color = "red";
       }
     }
   </script>
+  
 </body>
 </html>

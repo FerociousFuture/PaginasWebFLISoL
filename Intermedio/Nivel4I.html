@@ -123,21 +123,19 @@
 
   <script>
     function verificarRespuesta() {
-      const respuestaCorrecta = "Sam"; // El objeto más ligero es el cuchillo de Sam (1kg)
+      const respuestaCorrecta = "Sam";
       const entradaUsuario = document.getElementById("message").value.trim();
       const resultadoElement = document.getElementById("resultado");
-
+  
       if (entradaUsuario.toLowerCase() === respuestaCorrecta.toLowerCase()) {
-        resultadoElement.textContent = "¡Correcto! Redirigiendo al siguiente nivel...";
-        resultadoElement.className = "result correct";
-        setTimeout(() => {
-          window.location.href = "Final.html"; // Cambiar por la página de destino real
-        }, 2000);
+        resultadoElement.textContent = "¡Correcto! Has identificado al portador del objeto más ligero.";
+        resultadoElement.style.color = "green";
       } else {
         resultadoElement.textContent = "¡Respuesta incorrecta! Intenta de nuevo.";
-        resultadoElement.className = "result incorrect";
+        resultadoElement.style.color = "red";
       }
     }
   </script>
+  
 </body>
 </html>

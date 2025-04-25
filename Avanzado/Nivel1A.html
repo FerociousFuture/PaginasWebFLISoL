@@ -141,12 +141,10 @@
       const correcta = "Krog";  
       const entrada = document.getElementById("password").value;
       const resultado = document.getElementById("resultado");
-      const nextPageButton = document.querySelector(".next-page-btn");
 
       if (entrada === correcta) {
         resultado.textContent = "¡Has eliminado al orco correctamente! La puerta se abre ante tu valentía.";
         resultado.style.color = "#3b7a57";
-        nextPageButton.style.display = "inline-block";  // Mostrar el botón para avanzar
       } else {
         resultado.textContent = "¡El nombre es incorrecto! La puerta sigue cerrada, debes eliminar al orco correctamente.";
         resultado.style.color = "#b22222";

@@ -117,28 +117,20 @@
   <script>
     function verificarMensaje() {
       const respuestaCorrecta = "Lleva el anillo a mordor y destruyelo";
-      // Contraseña: Lleva el anillo a mordor y destruyelo
       const entradaUsuario = document.getElementById("message").value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       const respuestaNormalizada = respuestaCorrecta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       const resultadoElement = document.getElementById("resultado");
   
       if (entradaUsuario === respuestaNormalizada) {
-        resultadoElement.textContent = "¡Correcto! Redirigiendo al siguiente nivel...";
-        resultadoElement.className = "result correct";
-  
-        setTimeout(() => {
-          window.location.href = "Intermedio2.html"; // Página siguiente
-        }, 2000);
+        resultadoElement.textContent = "¡Correcto! Has descifrado el mensaje.";
+        resultadoElement.style.color = "green";
       } else {
-        resultadoElement.textContent = "¡La clave es errónea!";
-        resultadoElement.className = "result incorrect";
-  
-        setTimeout(() => {
-          resultadoElement.innerHTML += "<p style='color:#c9b037;margin-top:10px;'>Recuerda: desplaza cada letra 4 posiciones hacia atrás en el alfabeto.</p>";
-        }, 2000);
+        resultadoElement.textContent = "La clave es errónea.";
+        resultadoElement.style.color = "red";
       }
     }
   </script>
+  
   
 </body>
 </html>

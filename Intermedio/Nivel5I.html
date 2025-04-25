@@ -134,16 +134,13 @@
 
   <script>
     function verificarRespuesta() {
-      const respuestaCorrecta = "24"; // (2+1+31+45+40+25) = 144 / 6 = 24
+      const respuestaCorrecta = "24";
       const entradaUsuario = document.getElementById("message").value.trim();
       const resultadoElement = document.getElementById("resultado");
-
+  
       if (entradaUsuario === respuestaCorrecta) {
-        resultadoElement.textContent = "¡Correcto! Redirigiendo al siguiente desafío...";
+        resultadoElement.textContent = "¡Correcto! Has revelado el secreto de la Compañía.";
         resultadoElement.className = "result correct";
-        setTimeout(() => {
-          window.location.href = "RutaFinal.html";
-        }, 2000);
       } else {
         resultadoElement.textContent = "¡Respuesta incorrecta! Intenta nuevamente.";
         resultadoElement.className = "result incorrect";

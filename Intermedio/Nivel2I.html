@@ -116,22 +116,19 @@
 
   <script>
     function verificarClave() {
-        const claveCorrecta = "19"; // Contraseña correcta: número de vocales
+      const claveCorrecta = "19";
       const valorUsuario = document.getElementById("clave").value.trim();
       const resultadoElement = document.getElementById("resultado");
-
+  
       if (valorUsuario === claveCorrecta) {
-        resultadoElement.textContent = "¡Correcto! Redirigiendo al siguiente nivel...";
-        resultadoElement.className = "result correct";
-
-        setTimeout(() => {
-          window.location.href = "Intermedio3.html"; // Página de destino
-        }, 2000);
+        resultadoElement.textContent = "¡Correcto! Has ingresado la clave correcta.";
+        resultadoElement.style.color = "green";
       } else {
         resultadoElement.textContent = "Clave incorrecta. Vuelve a contar las vocales.";
-        resultadoElement.className = "result incorrect";
+        resultadoElement.style.color = "red";
       }
     }
   </script>
+  
 </body>
 </html>
