@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nazgûl en orden de poder</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Crimson Pro', serif;
+      background: #f0e6d6;
+      color: #2f2517;
+      padding: 2rem;
+      background-image: url('https://img.freepik.com/foto-gratis/fondo-papel-antiguo_1048-10528.jpg');
+      background-size: cover;
+    }
+
+    header {
+      background: #e3d0a8;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(70, 40, 10, 0.3);
+      margin-bottom: 2rem;
+      text-align: center;
+      border: 2px solid #a67c00;
+    }
+
+    h1 {
+      color: #5a3917;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px #d2ba89;
+    }
+
+    .container {
+      background: #fffaf0;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 0 30px rgba(100, 60, 20, 0.2);
+      border: 1px solid #c9ae7b;
+    }
+
+    .section-title {
+      color: #6c4e22;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'MedievalSharp', cursive;
+    }
+
+    .narracion, .problema {
+      background-color: #fcf7ec;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      line-height: 1.6;
+      border: 1px dashed #b2955a;
+    }
+
+    .password-section {
+      margin-top: 2rem;
+      background-color: #f4e8cf;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #c4a66a;
+    }
+
+    input[type="password"], button {
+      font-family: 'Crimson Pro', serif;
+      padding: 0.6rem;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #a67c00;
+      color: #fffbe7;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .next-page-btn {
+      display: none;
+      background-color: #006400;
+      color: white;
+      font-size: 1rem;
+      padding: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nazgûl en orden de poder</h1>
+  </header>
+  <div class="container">
+    <h2 class="section-title">La sombra del Rey Brujo</h2>
+    <div class="narracion">
+      <p>Los nueve Nazgûl cabalgan bajo la orden de Sauron, pero entre ellos hay jerarquías ocultas. Solo si logras ordenar su linaje por poder, el sendero hacia la Puerta Negra se abrirá.</p>
+    </div>
+
+    <h2 class="section-title">Enunciado del problema</h2>
+    <div class="problema">
+      <p>Implementa un árbol binario de búsqueda para organizar a los Nazgûl según su rango de poder. Cada Nazgûl posee un nombre y una puntuación asignada según su dominio del Anillo y su conexión con Sauron.</p>
+      <p>Lista de Nazgûl con sus rangos de poder:</p>
+      <ul>
+        <li>Khamûl - 82</li>
+        <li>Rey Brujo de Angmar - 99</li>
+        <li>Uvatha - 65</li>
+        <li>Adûnaphel - 70</li>
+        <li>Akhorahil - 68</li>
+        <li>Hoarmûrath - 75</li>
+        <li>Dwaw of Waw - 60</li>
+        <li>Jí Indûr - 72</li>
+        <li>Ren el Sin Nombre - 78</li>
+      </ul>
+      <p>Tu programa debe construir el árbol insertando a cada Nazgûl según su nivel de poder (de menor a mayor). Luego, deberás recorrer el árbol en orden descendente (del más poderoso al menos) para obtener la jerarquía final.</p>
+      <p>La contraseña será el nombre del Nazgûl más poderoso.</p>
+    </div>
+
+    <div class="password-section">
+      <label for="password">Ingresa la contraseña secreta (Nombre del Nazgûl más poderoso):</label><br>
+      <input type="password" id="password" placeholder="Introduce el nombre correcto">
+      <button onclick="verificarContrasena()">Verificar</button>
+      <div class="result" id="resultado"></div>
+      <button class="next-page-btn" onclick="location.href='siguiente-pagina.html'">Avanzar al siguiente nivel</button>
+    </div>
+  </div>
+
+  <script>
+    // Contraseña correcta: Rey Brujo de Angmar
+    function verificarContrasena() {
+      const correcta = "Rey Brujo de Angmar";
+      const entrada = document.getElementById("password").value.trim();
+      const resultado = document.getElementById("resultado");
+      const nextPageButton = document.querySelector(".next-page-btn");
+
+      if (entrada === correcta) {
+        resultado.textContent = "¡Has revelado al líder de los Nazgûl! Puedes continuar tu travesía.";
+        resultado.style.color = "#2e8b57";
+        nextPageButton.style.display = "inline-block";
+      } else {
+        resultado.textContent = "Ese no es el Nazgûl más poderoso. Reflexiona y vuelve a intentarlo.";
+        resultado.style.color = "#b22222";
+      }
+    }
+  </script>
+</body>
+</html>

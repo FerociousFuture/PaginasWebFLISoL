@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conjuros de Gandalf</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Crimson Pro', serif;
+      background: #f0e6d6;
+      color: #2f2517;
+      padding: 2rem;
+      background-image: url('https://img.freepik.com/foto-gratis/fondo-piso-madera_53876-88628.jpg?semt=ais_hybrid&w=740');
+      background-size: cover;
+    }
+
+    header {
+      background: #e3d0a8;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(70, 40, 10, 0.3);
+      margin-bottom: 2rem;
+      text-align: center;
+      border: 2px solid #a67c00;
+    }
+
+    h1 {
+      color: #5a3917;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px #d2ba89;
+    }
+
+    .container {
+      background: #fffaf0;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 0 30px rgba(100, 60, 20, 0.2);
+      border: 1px solid #c9ae7b;
+    }
+
+    .section-title {
+      color: #6c4e22;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'MedievalSharp', cursive;
+    }
+
+    .narracion, .problema {
+      background-color: #fcf7ec;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      line-height: 1.6;
+      border: 1px dashed #b2955a;
+    }
+
+    .password-section {
+      margin-top: 2rem;
+      background-color: #f4e8cf;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #c4a66a;
+    }
+
+    input[type="password"], button {
+      font-family: 'Crimson Pro', serif;
+      padding: 0.6rem;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #a67c00;
+      color: #fffbe7;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .next-page-btn {
+      display: none;
+      background-color: #006400;
+      color: white;
+      font-size: 1rem;
+      padding: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Conjuros de Gandalf</h1>
+  </header>
+  <div class="container">
+    <h2 class="section-title">Los Hechizos Perdidos</h2>
+    <div class="narracion">
+      <p>Gandalf el Gris debe recitar un poderoso hechizo para cerrar la grieta abierta por el Balrog. Sin embargo, el pergamino con el encantamiento ha sido destruido y dispersado en cinco antiguos grimorios. Cada grimorio contiene cinco hechizos apilados en el tiempo, y Gandalf deberá usar su sabiduría para reconstruir el conjuro correcto.</p>
+    </div>
+
+    <h2 class="section-title">Enunciado del problema</h2>
+    <div class="problema">
+      <p>Gandalf tiene cinco pilas, cada una con cinco hechizos en orden. La frase correcta se forma al tomar:</p>
+      <ul>
+        <li>El primer hechizo de la pila 1</li>
+        <li>El segundo hechizo de la pila 2</li>
+        <li>El tercer hechizo de la pila 3</li>
+        <li>El cuarto hechizo de la pila 4</li>
+        <li>El quinto hechizo de la pila 5</li>
+      </ul>
+      <p>Debe crear una nueva pila colocando esos cinco hechizos en ese orden. Una vez que los apile, el hechizo final se recita uniendo la primera letra de cada uno de los cinco conjuros seleccionados. Esa cadena de letras será la contraseña que desbloquea la siguiente etapa.</p>
+
+      <p>Hechizos por pila:</p>
+      <ul>
+        <li><strong>Pila 1:</strong> Lumora, Tenebris, Clarion, Fulguris, Umbra</li>
+        <li><strong>Pila 2:</strong> Glacium, Flamma, Vortus, Incendia, Ventus</li>
+        <li><strong>Pila 3:</strong> Silencio, Equinox, Tempora, Ignis, Solaris</li>
+        <li><strong>Pila 4:</strong> Aether, Mortalis, Nexus, Caligo, Umbrium</li>
+        <li><strong>Pila 5:</strong> Obscura, Renatus, Liberum, Spectra, Valari</li>
+      </ul>
+      <p>La contraseña se forma con la primera letra del hechizo 1 de la pila 1, hechizo 2 de la pila 2, y así sucesivamente hasta el hechizo 5 de la pila 5.</p>
+    </div>
+
+    <div class="password-section">
+      <label for="password">Introduce la contraseña del conjuro final:</label><br>
+      <input type="password" id="password" placeholder="Primera letra de cada conjuro seleccionado">
+      <button onclick="verificarContrasena()">Verificar</button>
+      <div class="result" id="resultado"></div>
+      <button class="next-page-btn" onclick="location.href='siguiente-pagina.html'">Avanzar al siguiente nivel</button>
+    </div>
+  </div>
+
+  <script>
+    function verificarContrasena() {
+      // La contraseña correcta es "LFTCU"
+      const correcta = "LFTCV";
+      const entrada = document.getElementById("password").value.toUpperCase();
+      const resultado = document.getElementById("resultado");
+      const nextPageButton = document.querySelector(".next-page-btn");
+
+      if (entrada === correcta) {
+        resultado.textContent = "¡El conjuro ha sido recitado con éxito! Las fuerzas oscuras se repliegan.";
+        resultado.style.color = "#006400";
+        nextPageButton.style.display = "inline-block";
+      } else {
+        resultado.textContent = "El conjuro es incorrecto... Gandalf necesita más sabiduría.";
+        resultado.style.color = "#8b0000";
+      }
+    }
+  </script>
+</body>
+</html>

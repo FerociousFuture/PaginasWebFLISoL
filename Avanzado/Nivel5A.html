@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grafo de los Anillos de Poder</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Crimson Pro', serif;
+      background: #f3ead3;
+      color: #2e261c;
+      padding: 2rem;
+      background-image: url('https://img.freepik.com/foto-gratis/fondo-papel-antiguo_1048-10528.jpg');
+      background-size: cover;
+    }
+
+    header {
+      background: #dac294;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(60, 30, 10, 0.3);
+      margin-bottom: 2rem;
+      text-align: center;
+      border: 2px solid #b88d2b;
+    }
+
+    h1 {
+      color: #5d3d14;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px #dfc68c;
+    }
+
+    .container {
+      background: #fffbf1;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 0 30px rgba(80, 50, 20, 0.2);
+      border: 1px solid #c7ab76;
+    }
+
+    .section-title {
+      color: #6e4c1f;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'MedievalSharp', cursive;
+    }
+
+    .narracion, .problema {
+      background-color: #fefaf1;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      line-height: 1.6;
+      border: 1px dashed #b59b6a;
+    }
+
+    .password-section {
+      margin-top: 2rem;
+      background-color: #f4e6c3;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #c3a76f;
+    }
+
+    input[type="password"], button {
+      font-family: 'Crimson Pro', serif;
+      padding: 0.6rem;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #8a6d1d;
+      color: #fffbe7;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .next-page-btn {
+      display: none;
+      background-color: #006400;
+      color: white;
+      font-size: 1rem;
+      padding: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Grafo de los Anillos de Poder</h1>
+  </header>
+  <div class="container">
+    <h2 class="section-title">Conexiones forjadas en fuego</h2>
+    <div class="narracion">
+      <p>Los Anillos de Poder no son objetos comunes. Cada uno está conectado por linajes, traiciones y destinos compartidos. Solo quien entienda sus lazos podrá acceder al siguiente paso en esta travesía.</p>
+    </div>
+
+    <h2 class="section-title">Enunciado del problema</h2>
+    <div class="problema">
+      <p>Implementa un grafo donde cada nodo representa un Anillo de Poder, y cada conexión indica una relación entre portadores o propósito. Cada nodo debe contener el nombre del anillo y su portador actual o histórico. El programa debe permitir:</p>
+      <ul>
+        <li>Insertar nuevos anillos con sus conexiones.</li>
+        <li>Buscar un anillo por nombre.</li>
+        <li>Mostrar todos los anillos en orden alfabético por nombre.</li>
+      </ul>
+      <p>Anillos conocidos y sus portadores:</p>
+      <ul>
+        <li>El Único - Sauron</li>
+        <li>Nenya - Galadriel</li>
+        <li>Narya - Gandalf</li>
+        <li>Vilya - Elrond</li>
+        <li>Anillo de Thrain - Durin III</li>
+      </ul>
+      <p>Crea el grafo, inserta estos anillos y simula sus conexiones. Por ejemplo, Nenya, Narya y Vilya están conectados entre sí por ser de los elfos; El Único está conectado con todos por su dominación. El programa debe buscar los nodos y al mostrarlos, imprimirlos en orden.</p>
+      <p>La contraseña será el primer anillo que aparece en el resultado al mostrar todos en orden alfabético.</p>
+    </div>
+
+    <div class="password-section">
+      <label for="password">Ingresa la contraseña secreta (Primer anillo en orden alfabético):</label><br>
+      <input type="password" id="password" placeholder="Nombre del anillo">
+      <button onclick="verificarContrasena()">Verificar</button>
+      <div class="result" id="resultado"></div>
+      <button class="next-page-btn" onclick="location.href='siguiente-pagina.html'">Avanzar al siguiente nivel</button>
+    </div>
+  </div>
+
+  <script>
+    // Contraseña correcta: Anillo de Thrain
+    function verificarContrasena() {
+      const correcta = "Anillo de Thrain";
+      const entrada = document.getElementById("password").value.trim();
+      const resultado = document.getElementById("resultado");
+      const nextPageButton = document.querySelector(".next-page-btn");
+
+      if (entrada === correcta) {
+        resultado.textContent = "¡Has descifrado las conexiones del poder! El camino se abre ante ti.";
+        resultado.style.color = "#2e8b57";
+        nextPageButton.style.display = "inline-block";
+      } else {
+        resultado.textContent = "Ese no es el primer anillo en orden. Intenta de nuevo.";
+        resultado.style.color = "#b22222";
+      }
+    }
+  </script>
+</body>
+</html>
