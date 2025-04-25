@@ -105,20 +105,21 @@
     <h1>Programación competitiva FLISoL</h1>
   </header>
   <div class="container">
-    <h2 class="section-title">Runas Enanas a ASCII</h2>
+    <h2 class="section-title">Frase Secreta de Moria</h2>
     <div class="narracion">
-      <p>Thorin encontró un mensaje cifrado con números delante de una gran puerta oscura. La palabra se encuentra oculta por magia por lo que deberas de encontrar el hechizo para revelarla</p>
+      <p>Se logra leer la frase de la puerta, se puede ver que se trata de una frase antigua. El eco de los enanos aún resuena entre las piedras, pero solo el que posea la sabiduría para descifrar la clave podrá avanzar más allá de las puertas selladas. ¿Tienes lo necesario para resolver este enigma?</p>
     </div>
 
     <h2 class="section-title">Enunciado del problema</h2>
     <div class="problema">
-      <p>Escribe un programa en C que reciba una serie de números enteros que representan valores ASCII y los convierta en caracteres. La suma de los valores ASCII debe ser la contraseña secreta para avanzar.</p>
-      <p>Los numeros son: 77, 79, 82, 68, 79, 82</p>
+      <p>Escribe un programa en C que reciba una cadena de caracteres y la analice usando funciones para encontrar cuantas veces aparece la letra "S". y la respuesta es correcta las puertas de Moria se abrirán.</p>
+      <p>La cadena de caracteres es "kjgjwpxnzSlougnvSojwjxozjasSkfjkfoiSfjogjmpS"
+    </p>
     </div>
 
     <div class="password-section">
-      <label for="password">Ingresa la contraseña secreta (Suma de los valores ASCII de "MORDOR"):</label><br>
-      <input type="password" id="password" placeholder="Introduce la suma de los valores ASCII de 'MORDOR'">
+      <label for="password">Ingresa la respuesta correcta:</label><br>
+      <input type="password" id="password" placeholder="Introduce el numero">
       <button onclick="verificarContrasena()">Verificar</button>
       <div class="result" id="resultado"></div>
       <button class="next-page-btn" onclick="location.href='siguiente-pagina.html'">Avanzar al siguiente nivel</button>
@@ -127,13 +128,13 @@
 
   <script>
     function verificarContrasena() {
-      const correcta = "MORDOR";  // Contraseña correcta
+      const correcta = "5";  // Contraseña correcta
       const entrada = document.getElementById("password").value;
       const resultado = document.getElementById("resultado");
       const nextPageButton = document.querySelector(".next-page-btn");
 
       if (entrada === correcta) {
-        resultado.textContent = "¡Logras leer el mensaje con tu sabiduría! La contraseña es correcta, avanza al siguiente nivel.";
+        resultado.textContent = "¡La puerta se abre ante tu sabiduría! La contraseña es correcta.";
         resultado.style.color = "#3b7a57";
         nextPageButton.style.display = "inline-block";  // Mostrar el botón para avanzar
       } else {
