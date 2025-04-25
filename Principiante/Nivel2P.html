@@ -121,7 +121,6 @@
       <input type="password" id="password">
       <button onclick="verificarContrasena()">Verificar</button>
       <div class="result" id="resultado"></div>
-      <button class="next-page-btn" onclick="location.href='siguiente-pagina.html'">Avanzar al siguiente nivel</button>
     </div>
   </div>
 
@@ -130,12 +129,10 @@
       const correcta = "gandalf"; // El nombre invertido
       const entrada = document.getElementById("password").value;
       const resultado = document.getElementById("resultado");
-      const nextPageButton = document.querySelector(".next-page-btn");
 
       if (entrada === correcta) {
         resultado.textContent = "¡El nombre del héroe ha sido revelado! El registro ha sido completado con éxito.";
         resultado.style.color = "#3b7a57";
-        nextPageButton.style.display = "inline-block";  // Mostrar el botón para avanzar
       } else {
         resultado.textContent = "¡La respuesta es errónea! El héroe de la Tierra Media aún guarda sus secretos.";
         resultado.style.color = "#b22222";

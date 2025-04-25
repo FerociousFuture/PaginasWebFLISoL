@@ -120,7 +120,6 @@
       <input type="password" id="password" placeholder="Introduce la suma de los valores ASCII de las letras">
       <button onclick="verificarContrasena()">Verificar</button>
       <div class="result" id="resultado"></div>
-      <button class="next-page-btn" onclick="location.href='siguiente-pagina.html'">Avanzar al siguiente nivel</button>
     </div>
   </div>
 
@@ -129,7 +128,6 @@
       const correcta = "607";  // La suma de los valores ASCII de "Anillo"
       const entrada = document.getElementById("password").value;
       const resultado = document.getElementById("resultado");
-      const nextPageButton = document.querySelector(".next-page-btn");
 
       if (entrada === correcta) {
         resultado.textContent = "¡La puerta se abre ante tu sabiduría! La contraseña es correcta, avanza al siguiente nivel.";

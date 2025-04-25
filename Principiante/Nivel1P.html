@@ -121,7 +121,6 @@
       <input type="password" id="password">
       <button onclick="verificarContrasena()">Verificar</button>
       <div class="result" id="resultado"></div>
-      <button class="next-page-btn" onclick="location.href='Nivel2P.html'">Avanzar al siguiente nivel</button>
     </div>
   </div>
 
@@ -132,18 +131,15 @@
       const resultado = document.getElementById("resultado");
   
       if (entrada === correcta) {
-        resultado.textContent = "¡Correcto! Redirigiendo...";
+        resultado.textContent = "¡Correcto! Puedes continuar.";
         resultado.style.color = "green";
-        
-        // Redirección con ruta absoluta (desde la raíz del servidor)
-        setTimeout(() => {
-          window.location.href = "/Principiante/Nivel2P.html"; // Ajusta según tu estructura
-        }, 2000);
       } else {
         resultado.textContent = "Contraseña incorrecta. Intenta de nuevo.";
         resultado.style.color = "red";
       }
     }
   </script>
+  
+  
 </body>
 </html>

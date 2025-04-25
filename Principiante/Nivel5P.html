@@ -122,7 +122,6 @@
       <input type="password" id="password" placeholder="Introduce el numero">
       <button onclick="verificarContrasena()">Verificar</button>
       <div class="result" id="resultado"></div>
-      <button class="next-page-btn" onclick="location.href='siguiente-pagina.html'">Avanzar al siguiente nivel</button>
     </div>
   </div>
 
@@ -136,7 +135,6 @@
       if (entrada === correcta) {
         resultado.textContent = "¡La puerta se abre ante tu sabiduría! La contraseña es correcta.";
         resultado.style.color = "#3b7a57";
-        nextPageButton.style.display = "inline-block";  // Mostrar el botón para avanzar
       } else {
         resultado.textContent = "¡La clave es errónea! La puerta sigue cerrada, debes comprender el enigma de las letras.";
         resultado.style.color = "#b22222";
