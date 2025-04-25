@@ -130,15 +130,18 @@
       const correcta = "10";
       const entrada = document.getElementById("password").value;
       const resultado = document.getElementById("resultado");
-      const nextPageButton = document.querySelector(".next-page-btn");
-
+  
       if (entrada === correcta) {
-        resultado.textContent = "¡La sabiduría ancestral ha hablado! El área es correcta, el campo de cebada se puede sembrar con éxito.";
-        resultado.style.color = "#3b7a57";
-        nextPageButton.style.display = "inline-block";  // Mostrar el botón para avanzar
+        resultado.textContent = "¡Correcto! Redirigiendo...";
+        resultado.style.color = "green";
+        
+        // Redirección con ruta absoluta (desde la raíz del servidor)
+        setTimeout(() => {
+          window.location.href = "/Principiante/Nivel2P.html"; // Ajusta según tu estructura
+        }, 2000);
       } else {
-        resultado.textContent = "¡La respuesta es errónea! La sabiduría del campo es elocuente, pero aún debes comprender el terreno de Bolsón Cerrado.";
-        resultado.style.color = "#b22222";
+        resultado.textContent = "Contraseña incorrecta. Intenta de nuevo.";
+        resultado.style.color = "red";
       }
     }
   </script>
