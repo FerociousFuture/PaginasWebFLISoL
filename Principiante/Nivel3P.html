@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación competitiva FLISoL</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Crimson Pro', serif;
+      background: #f5ecd9;
+      color: #3b2e1d;
+      padding: 2rem;
+      background-image: url('https://img.freepik.com/foto-gratis/fondo-piso-madera_53876-88628.jpg?semt=ais_hybrid&w=740');
+      background-size: cover;
+    }
+
+    header {
+      background: #e8d3a2;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(139, 69, 19, 0.3);
+      margin-bottom: 2rem;
+      text-align: center;
+      border: 2px solid #a67c00;
+    }
+
+    h1 {
+      color: #5e3a17;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px #dac89f;
+    }
+
+    .container {
+      background: #fffaf0;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 0 30px rgba(100, 60, 20, 0.2);
+      border: 1px solid #c9ae7b;
+    }
+
+    .section-title {
+      color: #7c5c2a;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'MedievalSharp', cursive;
+    }
+
+    .narracion, .problema {
+      background-color: #fcf7ec;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      line-height: 1.6;
+      border: 1px dashed #b2955a;
+    }
+
+    .password-section {
+      margin-top: 2rem;
+      background-color: #f4e8cf;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #c4a66a;
+    }
+
+    input[type="password"], button {
+      font-family: 'Crimson Pro', serif;
+      padding: 0.6rem;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #a67c00;
+      color: #fffbe7;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Programación competitiva FLISoL</h1>
+  </header>
+  <div class="container">
+    <h2 class="section-title">Enigma del Libro de Mazarbul</h2>
+    <div class="narracion">
+      <!-- Aquí va la historia fantástica del problema -->
+      <p>En las profundidades de Moria, Gandalf ha encontrado un enigma ancestral que solo puede resolverse si se descifra la clave oculta en las letras mágicas. Para avanzar, debes calcular el valor total de una palabra secreta escrita en caracteres antiguos. Si lo haces correctamente, el libro se abrirá y podrás continuar con tu misión.</p>
+    </div>
+
+    <h2 class="section-title">Enunciado del problema</h2>
+    <div class="problema">
+      <!-- Aquí va el problema en forma más clara y directa -->
+      <p>Escribe un programa en C que calcule la suma de los valores ASCII de las letras de una palabra secreta. La suma resultante será la contraseña para avanzar. Usa el valor correcto y el portal se abrirá.</p>
+    </div>
+
+    <div class="password-section">
+      <label for="password">Ingresa la contraseña secreta (Suma de las letras):</label><br>
+      <input type="password" id="password">
+      <button onclick="verificarContrasena()">Verificar</button>
+      <div class="result" id="resultado"></div>
+    </div>
+  </div>
+
+  <script>
+    function verificarContrasena() {
+      const correcta = "529";  // La suma de los valores ASCII de "Anillo"
+      const entrada = document.getElementById("password").value;
+      const resultado = document.getElementById("resultado");
+
+      if (entrada === correcta) {
+        resultado.textContent = "¡La puerta se abre ante tu sabiduría! La contraseña es correcta, avanza al siguiente nivel.";
+        resultado.style.color = "#3b7a57";
+      } else {
+        resultado.textContent = "¡La clave es errónea! La puerta sigue cerrada, debes comprender el enigma de las letras.";
+        resultado.style.color = "#b22222";
+      }
+    }
+  </script>
+</body>
+</html>
